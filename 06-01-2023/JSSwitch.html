@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS switch</title>
+    </head>
+    <body>
+        <h1>JS Switch</h1>
+        <script>
+            let env="test";
+            let amount = 100;
+            switch(env) {
+                case "dev": {
+                    amount = amount + (amount * 10 / 100);
+                }
+                break;
+                case "test": {
+                    amount=amount+(amount*20/100);
+                }
+                break;
+                case "stage": {
+                      amount=amount + (amount*30/100);                }
+                break;
+                case "prod": {
+                     amount= amount+(amount*5/100);
+                }
+                break;
+                default: {amount=amount;
+
+                }
+            }
+            console.log(amount)
+        </script>
+    </body>
+</html>
