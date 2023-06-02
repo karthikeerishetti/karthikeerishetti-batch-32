@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>profile</title>
+    <link rel="stylesheet" href="style.css" /> 
+</head>
+<body>
+    <h3 id="name"></h3>
+    <img src="Karthik Picture.png" alt="Avatar">
+    <p>hobbie:<span id="lasthobbie"></span></p>
+    <script>
+       let person = {
+         firstName : "Karthik",
+         lastName  : "Eerishetti",
+         age     : 24,
+         gender  :"male",
+         email  :"karthikpatel275@gmail.com",
+         state:"dallas",
+         street:"preston oaks rd",
+         hobbies:["playing cricket","Reading","watching movies","riding bike"]
+          
+       }; 
+       console.log(person.hobbies[person.hobbies.length-1])
+       document.getElementById("lasthobbie").innerHTML = person.hobbies[3];
+       document.getElementById("name").innerHTML = person.firstName+person. lastName;
+    </script>
