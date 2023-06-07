@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title> Profile Information</title>
+
+    </head>
+    <body>
+        <h1> profile</h1>
+
+        <table>
+            <tr>
+                <td>
+                  First Name </td>
+                  <td><input type="text" name="firstname" id="fName"/></td>
+            </tr>
+            <tr>
+                    
+                <td>Last Name</td>
+                <td><input type="text" name="lastname" id="Lname"/></td>
+              </tr>
+              <tr>
+                <td>E mail</td>
+                <td><input type="email" name="email" id="email"/></td>
+              </tr>
+              <tr>
+                <td> Phone Number</td>
+                <td><input type="number" name="number" id="number"/></td>
+              </tr>
+              <tr>
+                <td>DOB</td>
+                <td><input type="date" name="DateofBirth" id="date"/></td>
+              </tr>
+              <tr>
+                <td>gender</td>
+                <td><input type="radio" name="gender" value="male"/>male
+                    <input type="radio" name="gender" value="female">Female</td>
+              </tr>
+              <tr>
+                <td>Hobbies</td>
+                <td>
+                    <input type="checkbox" name="hobby" value="volleyball"/>Volleyball<br>
+                    <input type="checkbox" name="hobby"  value="cricket"/>Cricket<br>
+                    <input type="checkbox" name="hobby" value="hiking"/>Hiking                </td>
+              </tr>
+              <tr>
+                <td><button type="submit" onclick="submitDetails();">Submit</button></td>
+              </tr>
+        </table>
+        <div id="output"></div>
+
+        <script>
+            function submitDetails(){
+                const fName = document.getElementById("fName").value;
+                const Lname = document.getElementById("Lname").value;
+                const Email = document.getElementById("email").value;
+                const phonenumber = document.getElementById("number").value;
+                const DoB = document.getElementById("date").value;
+                let gender = document.getElementsByName("gender");
+                let selectedgender;
+                gender.forEach(ele =>{
+                    if(ele.checked)selectedgender =ele.value;
+                } )
+                let hobbies = document.getElementsByName("hobby");
+                let selectedhobbies="";
+                hobbies.forEach(ele =>{
+                    if(ele.checked) selectedhobbies = selectedhobbies + ele.value + ", "
+                })
+                document.getElementById("output").innerHTML = " <table><tr><td>First Name:"+fName + "</tr></td>"
+                                                              +" <tr><td> LastName:" + Lname +"</td></tr>"
+                                                              +"<tr><td> Email:" + Email + "</td></tr>"
+                                                            +"<tr><td> phonenumber:" + phonenumber + "</td></tr>"
+                                                            + "<tr><td> DoB:" + DoB + "</td></tr>"   
+                                                            + "<tr><td>Gender:" + selectedgender + "</td></tr>"
+                                                            + "<tr><td>Hobbies:" + selectedhobbies + "</td></tr></table>"        }
+        </script
+    </body>
+</html>
